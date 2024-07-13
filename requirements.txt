@@ -1,0 +1,12 @@
+
+-r ./requirements/req-common.txt
+
+-r ./requirements/req-embedding.txt
+
+-r ./requirements/req-llm.txt
+
+-r ./requirements/req-sql.txt
+
+-r ./requirements/req-vectordatabase.txt
+
+-r ./requirements/req-torch.txt --index-url https://download.pytorch.org/whl/cu121

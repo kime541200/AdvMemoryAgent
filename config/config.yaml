@@ -1,0 +1,27 @@
+system:
+  device: cuda
+  store_chat_to_db: True
+  chat_verbose: False
+
+llm_client:
+  host: http://127.0.0.1:11434
+  model: 'gemma2'
+  keep_alive: 30
+
+vector_db:
+  name: conversations
+
+indexing:
+  embed_model: path/to/your/embed_model
+
+sql_db:
+  dbname: memory_agent
+  user: example_user
+  password: '123456'
+  host: '127.0.0.1'
+  port: '5432'
+
+
+reranker:
+  reranker_model_path: path/to/your/rerank_model
+  rerank_threshold: 0.05
