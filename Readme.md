@@ -50,6 +50,7 @@ pip install -r requirements.txt
 ## Using
 
 1. 先在 `config/config.yml` 中設定好相關參數, 例如:
+
 ```yaml
 system:
   device: cuda
@@ -81,29 +82,35 @@ reranker:
 如果都按照前述步驟操作的話這邊只需要改嵌入模型的路徑(`embed_model`)以及Rerank模型的路徑(`reranker_model_path`)即可，其他的參數就自己視情況調整。
 
 2. 開始運行
+
 ```bash
 python run.py
 ```
 
 3. 一般模式
+
 一般模式就是普通的跟LLM對話。
 
 ![00](./imgs/00.png)
 
 4. 回想模式
+  
 在你輸入的文字前面加上`/recall`，AI便會檢查過往的對話紀錄中是否有與你的提問有相關的資訊，如果有的話就會參考相關資訊並做出回答。
 
 ![01](./imgs/01.png)
 
 5. 刪除模式
+
 在對話過程中有時會有一些毫無價值的對話，這時便可以輸入`/forget`，將最近的一組問答從AI助手的大腦中(aka.資料庫)中移除。
 
 ![02](./imgs/02.png)
 
 6. 記憶模式
+
 如果想將一些資料塞進AI助手的腦中, 可以在輸入的文字前面加上`/memorize`, 便可以將這段文字塞進去。
 
 ![03](./imgs/03.png)
 
 7. 退出對話
+
 輸入`bye`就可以退出對話
