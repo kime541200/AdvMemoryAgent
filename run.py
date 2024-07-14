@@ -14,8 +14,9 @@ def load_configs(config_file_path: str):
     with open(config_file_path, 'r', encoding='utf-8') as file:
         yaml_config = yaml.safe_load(file)
     settings = Settings(**yaml_config)
-    print(f"Running on device: {settings.system.device}")
-    print(settings)    
+    if settings.system.chat_verbose == True:
+        print(f"Running on device: {settings.system.device}")
+        print(settings)    
     return settings
 
 def recall(llm_client: LLMClient, vecdb: VecDBClient, reranker: Reranker, query: str, verbose: bool) -> str:
