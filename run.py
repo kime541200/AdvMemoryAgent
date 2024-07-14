@@ -78,7 +78,7 @@ async def run():
             break
 
         if query[:7].lower() == '/recall':
-            query = query[8:]
+            query = query[7:]
             prompt = recall(llm_client=llm_client, vecdb=vecdb, reranker=reranker, query=query, verbose=settings.system.chat_verbose)            
         elif query[:7].lower() == '/forget':
             remove_last_conversation(DB_PARAMS=DB_PARAMS)
@@ -86,7 +86,7 @@ async def run():
             print(Fore.LIGHTRED_EX + 'Latest conversation is removed.\n')
             continue
         elif query[:9].lower() == '/memorize':
-            query = query[10:]
+            query = query[9:]
             store_conversations(DB_PARAMS=DB_PARAMS, prompt=query, response='Memory stored.')
             print(Fore.LIGHTBLUE_EX + 'Memory stored.\n')
             continue
