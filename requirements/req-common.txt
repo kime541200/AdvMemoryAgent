@@ -1,6 +1,5 @@
 pydantic
 pydantic-settings
-python-dotenv
 tqdm
 colorama
 pyyaml

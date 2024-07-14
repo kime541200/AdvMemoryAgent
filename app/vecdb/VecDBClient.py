@@ -1,6 +1,5 @@
 import chromadb
 from sentence_transformers import SentenceTransformer
-from app.rerank.utils.utils import compute_similarity_scores, filter_low_score_docs
 
 class VecDBClient():
     def __init__(self,
@@ -17,7 +16,6 @@ class VecDBClient():
         return SentenceTransformer(model_path, device=self.device)
 
     def create_vector_db(self, conversations):
-        # 如果已經有相同名稱的向量資料庫, 便先把舊的刪掉, 避免重複加入相同的對話, 沒有的話就直接pass
         try:
             self.vecdb_client.delete_collection(name=self.name)
         except ValueError:

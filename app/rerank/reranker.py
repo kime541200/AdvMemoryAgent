@@ -1,6 +1,3 @@
-import os
-import logging
-
 from FlagEmbedding import FlagReranker
 
 class Reranker():
