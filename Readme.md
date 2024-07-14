@@ -39,8 +39,8 @@ ollama run gemma2 # 抓你自己喜歡的就可以了
 
 2. 建置專案:
 ```bash
-git clone <project-link>
-cd <project-name>
+git clone https://github.com/kime541200/AdvMemoryAgent.git
+cd AdvMemoryAgent
 
 sudo docker-compose up --build
 
